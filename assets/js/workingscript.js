@@ -1,27 +1,19 @@
 // Assignment code here
 
+
 /* Lowercase characters */
-var lowerAlphas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var lowerAlphas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 /* Uppercase characters */
-        var upperAlphas = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    var upperAlphas = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 /* Special Characters */
-        var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+    var specialCharacters = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
 /* Numeric characters */
-        var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 /* Variable for length of new password */
-        var userLength;
-/* Variable if low case characters are selected */
-        var lowerCaseChoice;
-/* Variable if upper case characters are selected */        
-        var upperCaseChoice;
-/* Variable if special characters are selected */
-        var specialCharactersChoice;
-/* Variable if numbers are selected */
-        var numbersChoice;
+    var userLength;
 /* Variable for what characters types are needed in the password */
-        var userCharacterType;
-/*  Variable for creating new array that will hold the generated password */
-        var newPassword = [];
+    var userCharacterType;
+
 
 /* Get references to the #generate element */
     var generateBtn = document.querySelector("#generate");
@@ -36,8 +28,6 @@ var lowerAlphas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
         var passwordText = document.querySelector("#password");
 /* Sets password variable equal to textarea ID password in html doc */
         passwordText.value = password;
-
-
 
         function generatePassword() {
 
@@ -137,26 +127,26 @@ var lowerAlphas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
              };
 /* END OF SECOND IF/ELSE STATEMENT TO FIND USER CHARACTER TYPES */
 
+    var characterarr = [];
+
 /* Loop that will search through all character type arrays */
           for (var i = 0; i < userLength; i++) {
-/* Variable that is selected from the floor loop based upon the conditions (length/charcter types) provied by the user */
+/* Creates variable that is a combination of characters selected from the loop */
             var selectedCharacter = userCharacterType[Math.floor(Math.random() * userCharacterType.length)]
-/* Based upon the userLength providied this will push "add other characters" to the end of the newPassword array */
-            newPassword.push(selectedCharacter)
+            characterarr.push(selectedCharacter)
           };
-/* Join method used to concatenate all of the selected items from the for loop - returns them to the newPassword array  */
-          
-          return newPassword.join('')
-
-
+    
+          return characterarr.join('')
+             
+/* END OF generatePassword Function */
     };
 /* END OF generatePassword Function */
 
-
-
+/* END OF writePassword Function */
 };
 /* END OF writePassword Function */
 
 
-/* Event listener for button click */
+/* Event listener to generate button */
 generateBtn.addEventListener("click", writePassword);
+
