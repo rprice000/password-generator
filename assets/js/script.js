@@ -141,7 +141,7 @@ var lowerAlphas = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
           for (var i = 0; i < userLength; i++) {
 /* Variable that is selected from the floor loop based upon the conditions (length/charcter types) provied by the user */
             var selectedCharacter = userCharacterType[Math.floor(Math.random() * userCharacterType.length)]
-/* Based upon the userLength providied this will push "add other characters" to the end of the newPassword array */
+/* Based upon the userLength provided this will push "add other characters" to the end of the newPassword array */
             newPassword.push(selectedCharacter)
           };
 /* Join method used to concatenate all of the selected items from the for loop - returns them to the newPassword array  */
